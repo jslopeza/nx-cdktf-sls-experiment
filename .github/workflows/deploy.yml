@@ -1,0 +1,26 @@
+name: Deploy
+
+on: push
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js 14
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          cache: 'yarn'
+
+      - name: Install
+        run: yarn --frozen-lockfile
+
+      - name: Build CDK
+        run: yarn nx run deployment:build
+
+      - name: Synth
+        run: yarn nx run deployment:tf-synth

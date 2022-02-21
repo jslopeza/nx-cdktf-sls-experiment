@@ -1,0 +1,11 @@
+{
+  "language": "typescript",
+  "app": "node main.js",
+  "projectId": "6d590b17-9353-48ca-bb62-9124235b3d2c",
+  "terraformProviders": [],
+  "terraformModules": [],
+  "context": {
+    "excludeStackIdFromLogicalIds": "true",
+    "allowSepCharsInLogicalIds": "true"
+  }
+}

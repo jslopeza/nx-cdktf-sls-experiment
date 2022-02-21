@@ -1,7 +1,9 @@
 {
   "version": 2,
   "projects": {
+    "api": "apps/api",
+    "deployment": "apps/deployment",
     "fe": "apps/fe",
-    "fe-e2e": "apps/fe-e2e"
+    "tf-helpers": "libs/tf-helpers"
   }
 }

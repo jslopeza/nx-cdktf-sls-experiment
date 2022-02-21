@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-cdktf-sls/api/infrastructure": ["apps/api/infrastructure/main.ts"],
+      "@nx-cdktf-sls/fe/infrastructure": ["apps/fe/infrastructure/main.ts"],
+      "@nx-cdktf-sls/tf-helpers": ["libs/tf-helpers/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -48,6 +48,35 @@
       "options": {
         "lintFilePatterns": ["apps/fe/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "tf-build": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "tsc -p tsconfig.tf.json"
+          },
+          {
+            "command": "cp cdktf.json ../../../dist/apps/fe/infrastructure/"
+          }
+        ],
+        "parallel": false,
+        "cwd": "apps/fe/infrastructure"
+      }
+    },
+    "tf-get": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "cdktf get",
+        "cwd": "dist/apps/fe/infrastructure"
+      }
+    },
+    "tf-synth": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "cdktf synth",
+        "cwd": "dist/apps/fe/infrastructure"
+      }
     }
   },
   "tags": []
