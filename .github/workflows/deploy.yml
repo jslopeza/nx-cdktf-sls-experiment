@@ -19,8 +19,5 @@ jobs:
       - name: Install
         run: yarn --frozen-lockfile
 
-      - name: Build CDK
-        run: yarn nx run deployment:build
-
       - name: Synth
         run: yarn nx run deployment:tf-synth
